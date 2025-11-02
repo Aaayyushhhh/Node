@@ -11,6 +11,7 @@ hostRouter.get("/add-home",(req,res,next) =>{
 });
 
 hostRouter.post("/add-home",(req,res,next) =>{
+  console.log('Home Registration successfull for:', req.body,req.body.houseName);
   res.sendFile(path.join(rootDir,'views','homeAdded.html'))
     });
 
