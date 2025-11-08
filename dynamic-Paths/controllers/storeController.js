@@ -59,10 +59,17 @@ exports.postRemoveFromFavourite = (req, res, next) => {
 
 exports.getHomeDetails = (req, res, next) => {
   const homeId = req.params.homeId;
-  console.log("At home detailpage",homeId)
+  Home.findById(homeId,home =>{
+    if(!home){
+      console.log("Home not found")
+      res.redirect("/homes")
+    }else{
   res.render("store/home-detail", {
-        pageTitle: "Home Detail",
-        currentPage: "Home",
-      });
+    home:home,
+    pageTitle: "Home Detail",
+    currentPage: "Home",
+     });
     }
+  })
+};
 
