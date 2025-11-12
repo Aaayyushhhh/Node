@@ -14,11 +14,17 @@ module.exports = class Home {
     this.photoUrl = photoUrl || "";
   }
 
+
   save() {
-    this.id = Math.random().toString();
     Home.fetchAll((registeredHomes) => {
-      registeredHomes.push(this);
-      const homeDataPath = path.join(rootDir, "data", "homes.json");
+      if (this.id) { // edit home case for which that would be present
+        registeredHomes = registeredHomes.map(home => 
+          home.id === this.id ? this : home);
+      } else { // add home case
+        this.id = Math.random().toString();
+        registeredHomes.push(this);
+      }
+      
       fs.writeFile(homeDataPath, JSON.stringify(registeredHomes), (error) => {
         console.log("File Writing Concluded", error);
       });
