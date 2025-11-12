@@ -4,6 +4,7 @@ exports.getAddHome = (req, res, next) => {
   res.render("host/edit-home", {
     pageTitle: "Add Home to airbnb",
     currentPage: "addHome",
+    editing : false ,
   });
 };
 exports.getEditHome = (req, res, next) => {
