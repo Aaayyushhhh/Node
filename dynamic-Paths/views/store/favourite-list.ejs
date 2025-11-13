@@ -22,6 +22,16 @@
                   <span class="text-gray-700"><%= home.rating %></span>
                 </div>
               </div>
+      <div class="flex justify-center">
+       <form action="/favourites/delete/<%= home.id %>" method="POST">
+         <button 
+         type="submit"
+          class="px-8 py-2 bg-red-500 hover:bg-red-600 text-white rounded-lg shadow-md 
+             transition-all duration-200 active:scale-95 font-medium">
+             Remove from Favourite
+         </button>
+       </form>
+     </div>
             </div>
           </div>
         <% }) %>

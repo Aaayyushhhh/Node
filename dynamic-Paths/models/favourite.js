@@ -30,4 +30,5 @@ module.exports = class Favourite {
       fs.writeFile(favouriteDataPath, JSON.stringify(homeIds),callback);
     })
   }
+  
 };
