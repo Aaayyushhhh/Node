@@ -22,10 +22,22 @@
                   <span class="text-gray-700"><%= home.rating %></span>
                 </div>
               </div>
-              <a href = "/host/edit-home/<%= home.id %>?editing=true"class="bg-blue-500 p-2">Edit</a>
-              <form action = "/host/delete-home/<%= home.id %>" method = "POST">
-                 <button type = "submit" class="bg-red-500 p-2">Delete</button>
-              </form>
+<div class="flex items-center justify-between">
+  <a 
+    href="/host/edit-home/<%= home.id %>?editing=true"
+    class="bg-blue-500 text-white px-6 py-2 rounded-full shadow-md hover:shadow-lg hover:scale-105 transition-all duration-300 font-semibold tracking-wide">
+    Edit
+  </a>
+
+      <form action="/host/delete-home/<%= home.id %>" method="POST">
+        <button 
+          type="submit"
+          class="bg-red-500 text-white px-6 py-2 rounded-full shadow-md hover:shadow-lg hover:scale-105 transition-all duration-300 font-semibold tracking-wide">
+           Delete
+        </button>
+      </form>
+</div>
+
              </div>
           </div>
         <% }) %>
