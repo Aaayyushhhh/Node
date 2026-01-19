@@ -18,7 +18,7 @@ module.exports = class Home {
   save() {
     const db = getDB();
     if (this._id) { // update
-      const updateFields = {
+      const updateFields = {  
         houseName: this.houseName,
         price: this.price,
         location: this.location,

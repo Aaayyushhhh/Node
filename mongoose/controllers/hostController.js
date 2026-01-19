@@ -53,17 +53,28 @@ res.redirect("/host/host-home-list");
 
 exports.postEditHome = (req, res, next) => {
   const { id, houseName, price, location, rating, photoUrl ,description} = req.body;
-  const home = new Home(houseName, price, location, rating, photoUrl,description, id);
-  home.save().then(result => {
+  Home.findById(id).then((home) => {
+    home.houseName = houseName;
+    home.price = price;
+    home.location = location;
+    home.rating = rating;
+    home.photoUrl = photoUrl;
+    home.description= description;
+    home.save().then(result => {
     console.log('Home Updated',result);
+  }).catch(err => {
+    console.log('Error while updating',err)
   })
   res.redirect("/host/host-home-list");
+  }).catch(err =>{
+    console.log('Error while finding Home',err)
+  })
 };
 
 exports.postDeleteHome = (req,res,next) =>{
   const homeId = req.params.homeId;
   console.log("came to delete home",homeId);
-  Home.deleteById(homeId).then(() => {
+  Home.findByIdAndDelete(homeId).then(() => {
     res.redirect("/host/host-home-list");
   }).catch(error =>{
     console.log("Error while deleting", error);

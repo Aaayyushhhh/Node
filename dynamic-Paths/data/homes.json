@@ -1,1 +1,3 @@
-[{"houseName":"House no 12","price":20000,"location":"Thailand","rating":5,"photoUrl":"/images/house1.png","id":"1"},{"id":"2","houseName":"House no 2","price":19999,"location":"Mysore","rating":4.3,"photoUrl":"/images/house2.png"}]
+[{"houseName":"House no 12","price":20000,"location":"Thailand","rating":5,"photoUrl":"/images/house1.png","id":"1"},{"id":"2","houseName":"House no 2","price":19999,"location":"Mysore","rating":4.3,"photoUrl":"/images/house2.png"},{"houseName":"Kotha","price":1999,"location":"Banglore","rating":3.2,"photoUrl":"/images/house3.png","id":"0.9321498022218727"}]
+
+ 
